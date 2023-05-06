@@ -12,6 +12,9 @@ class Auto:
 
     def print_passengers_names(self):
         if self.passengers != []:
-            print()
-            for passengers in self.passengers:
-                print()
+            print(f"Name of {self.brand} passengers:")
+            for passenger in self.passengers:
+                print(passenger.name)
+        else:
+            print(f"There are no passengers in {self.brand}")
+
