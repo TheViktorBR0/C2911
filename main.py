@@ -12,3 +12,6 @@ class Auto:
 
     def print_passengers_names(self):
         if self.passengers != []:
+            print()
+            for passengers in self.passengers:
+                print()
