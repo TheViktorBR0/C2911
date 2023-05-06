@@ -18,3 +18,12 @@ class Auto:
         else:
             print(f"There are no passengers in {self.brand}")
 
+Oleg = Human('Oleg')
+Viktor = Human('Viktor')
+Mira = Human('Mira')
+car = Auto('Folks-vagen')
+
+car.add_passenger(Oleg)
+car.add_passenger(Viktor)
+car.add_passenger(Mira)
+car.print_passengers_names()
