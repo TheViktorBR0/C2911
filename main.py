@@ -11,6 +11,40 @@ class Human:
         self.car = car
         self.home = home
 
+    def get_home(self):
+        self.home = House()
+
+    def get_car(self):
+        self.car = Auto(brands_of_cars)
+
+    def get_job(self):
+        if self.car.drive():
+            pass
+        else:
+            self.to_repair()
+            return
+        self.job = Job(job_list)
+
+    def eat(self):
+        if self.home.food <= 0:
+            self.shopping('food')
+        else:
+            if self.satiety >= 100:
+                self.satiety = 100
+                return
+            self.satiety += 5
+            self.home.food -= 5
+
+    def work(self):
+        if self.car.drive():
+            pass
+        else:
+            if self.car.fuel < 20:
+                self.shopping('fuel')
+                return
+        self.money += self.job.salary
+        self.gladness -= self.job
+
 
 class Auto:
     def __init__(self, brand_list):
