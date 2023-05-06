@@ -7,3 +7,7 @@ class Human:
         self.job = job
         self.car = car
         self.home = home
+
+class Auto:
+    def __init__(self, brand_list):
+        
