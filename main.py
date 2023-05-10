@@ -20,7 +20,7 @@ class Student:
     def to_chill(self):
         print('Rest time')
         self.gladness += 5
-        self.progress-= 0.1
+        self.progress -= 0.1
 
     def is_alive(self):
         if self.progress < -0.5:
@@ -49,7 +49,8 @@ class Student:
         self.end_of_day()
         self.is_alive()
 
-oleg = Student(name = "Oleg's")
+
+oleg = Student(name="Oleg's")
 
 for day in range(365):
     if oleg.alive == False:
