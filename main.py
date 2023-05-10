@@ -1,58 +1,33 @@
-import random
+class BankAccount:
+    def __init__(self, account_number, balance):
+        self.account_number = account_number
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance += amount
+        print(f"Deposit of {amount} successful. Current balance is {self.balance}")
+
+    def withdraw(self, amount):
+        if amount > self.balance:
+            print("Withdrawal failed. Not enough funds.")
+        else:
+            self.balance -= amount
+            print(f"Withdrawal of {amount} successful. Current balance is {self.balance}")
+
+    def get_balance(self):
+        return self.balance
 
 
-class Student:
-    def __init__(self, name):
-        self.name = name
-        self.gladness = 50
-        self.progress = 0
-        self.alive = True
+account_number = input("Enter account number: ")
+balance = int(input("Enter starting balance: "))
 
-    def to_study(self):
-        print('Time to study')
-        self.progress += 0.12
-        self.gladness -= 5
+my_account = BankAccount(account_number, balance)
+print(f"Account number: {my_account.account_number}")
+print(f"Current balance: {my_account.get_balance()}")
 
-    def to_sleep(self):
-        print('I will sleep')
-        self.gladness += 3
+deposit_amount = int(input("Enter deposit amount: "))
+withdrawal_amount = int(input("Enter withdrawal amount: "))
 
-    def to_chill(self):
-        print('Rest time')
-        self.gladness += 5
-        self.progress -= 0.1
-
-    def is_alive(self):
-        if self.progress < -0.5:
-            print('Cast out...')
-            self.alive = False
-        elif self.gladness <= 0:
-            print('Depression...')
-            self.alive = False
-        elif self.progress > 5:
-            print('Passed externally...')
-
-    def end_of_day(self):
-        print(f"Gladness = {self.gladness}")
-        print(f"Progress = {round(self.progress, 2)}")
-
-    def live(self, day):
-        day = "Day " + str(day) + " of " + self.name + " life"
-        print(f"{day:=^50}")
-        live_cube = random.randint(1, 3)
-        if live_cube == 1:
-            self.to_study()
-        elif live_cube == 2:
-            self.to_sleep()
-        elif live_cube == 3:
-            self.to_chill()
-        self.end_of_day()
-        self.is_alive()
-
-
-oleg = Student(name="Oleg's")
-
-for day in range(365):
-    if oleg.alive == False:
-        break
-    oleg.live(day)
+my_account.deposit(deposit_amount)
+my_account.withdraw(withdrawal_amount)
+print(f"Current balance: {my_account.get_balance()}")
