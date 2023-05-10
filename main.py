@@ -18,7 +18,9 @@ class BankAccount:
         return self.balance
 
 
-account_number = input("Enter account number: ")
+account_number = int(input("Enter account number with 16 or less numbers: "))
+if account_number > 16:
+    int(input("Enter valid account number: "))
 balance = int(input("Enter starting balance: "))
 
 my_account = BankAccount(account_number, balance)
