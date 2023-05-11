@@ -18,17 +18,15 @@ class BankAccount:
         return self.balance
 
 
-account_number = int(input("Enter account number with 16 or less numbers: "))
-if account_number > 16:
-    account_number = int(input("Enter valid account number: "))
-balance = int(input("Enter starting balance: "))
+account_number = int(input("Enter account number: "))
+balance = float(input("Enter starting balance: "))
 
 my_account = BankAccount(account_number, balance)
 print(f"Account number: {my_account.account_number}")
 print(f"Current balance: {my_account.get_balance()}")
 
-deposit_amount = int(input("Enter deposit amount: "))
-withdrawal_amount = int(input("Enter withdrawal amount: "))
+deposit_amount = float(input("Enter deposit amount: "))
+withdrawal_amount = float(input("Enter withdrawal amount: "))
 
 my_account.deposit(deposit_amount)
 my_account.withdraw(withdrawal_amount)
