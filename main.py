@@ -165,7 +165,7 @@ class Auto:
         self.consumption = brand_list[self.brand]['consumption']
 
     def drive(self):
-        if self.strength > 0 | self.fuel >= self.consumption:
+        if self.strength > 0 and self.fuel >= self.consumption:
             self.fuel -= self.consumption
             self.strength -= 1
             return True
@@ -204,6 +204,6 @@ class Job:
 
 nick = Human(name='Nick')
 
-for day in range(1, 9):
+for day in range(1, 8):
     if nick.live(day) == False:
         break
