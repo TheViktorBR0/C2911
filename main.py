@@ -1,6 +1,5 @@
 # ----------------------------------------------------------------------------------
 #
-#
 # class Counter:
 #     def __init__(self, max_number):
 #         self.i = 0
@@ -29,6 +28,7 @@
 #         yield number ** i
 #         i += 1
 #
+#
 # res = raise_to_the_degrees(10, 100)
 # print(res)
 # for _ in res:
@@ -36,14 +36,31 @@
 #     print(_)
 #
 # ----------------------------------------------------------------------------------
-
+#
 # class Helper:
 #     def __init__(self, work):
 #         self.work = work
+#
 #     def __call__(self, work):
-#         return f"I will help you with your {self.work}. Afterward I will help you with {work}"
+#         return f"I will help you with your {self.work}. Afterwards I will help you with {work}"
+#
 #
 # helper = Helper('Homework')
 # print(helper('Cleaning'))
-
+#
+# ----------------------------------------------------------------------------------
+#
+# def helper(work):
+#     work_in_memory = work
+#
+#     def helper(work):
+#         return f"I will help you with your {work_in_memory}. Afterwards I will help you with {work}"
+#
+#     return helper
+#
+#
+# helper = helper('Homework')
+# print(helper("cleaning"))
+# print(helper("driving"))
+#
 # ----------------------------------------------------------------------------------
