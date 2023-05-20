@@ -2,9 +2,13 @@
 
 try:
     print('start')
-    print(error)
+    print(10/0)
     print('No errors')
-except:
-    print('We have an error')
+# except NameError:
+#     print('We have a Name Error')
+# except ZeroDivisionError:
+#     print('We have a Zero Division Error')
+except (NameError, ZeroDivisionError) as error:
+    print(error)
 
 print('Next code')
