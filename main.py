@@ -42,7 +42,7 @@
 #         self.work = work
 #
 #     def __call__(self, work):
-#         return f"I will help you with your {self.work}. Afterwards I will help you with {work}"
+#         return f"I will help you with your {self.work}. Afterward I will help you with {work}"
 #
 #
 # helper = Helper('Homework')
@@ -54,7 +54,7 @@
 #     work_in_memory = work
 #
 #     def helper(work):
-#         return f"I will help you with your {work_in_memory}. Afterwards I will help you with {work}"
+#         return f"I will help you with your {work_in_memory}. Afterward I will help you with {work}"
 #
 #     return helper
 #
@@ -63,4 +63,8 @@
 # print(helper("cleaning"))
 # print(helper("driving"))
 #
+# ----------------------------------------------------------------------------------
+
+
+
 # ----------------------------------------------------------------------------------
