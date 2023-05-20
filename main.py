@@ -1,14 +1,41 @@
-#print(f"NameError - {type(NameError)} - {issubclass(NameError, BaseException)}")
+# print(f"NameError - {type(NameError)} - {issubclass(NameError, BaseException)}")
+#
+# --------------------------------------------------------------------------------
+#
+# try:
+#     try:
+#         print('start')
+#         print(error)
+#         print('No errors')
+#     except SyntaxError:
+#         print('Wrong errors')
+# except (NameError, ZeroDivisionError) as error:
+#     print(error)
+#
+# print('Next code')
+#
+# --------------------------------------------------------------------------------
+#
+# try:
+#     print('start')
+# except NameError as error:
+#     print(error)
+# else:
+#     print('no problems')
+# finally:
+#     print('final code')
+#
+# print('next code')
+#
+# --------------------------------------------------------------------------------
 
-try:
-    print('start')
-    print(10/0)
-    print('No errors')
-# except NameError:
-#     print('We have a Name Error')
-# except ZeroDivisionError:
-#     print('We have a Zero Division Error')
-except (NameError, ZeroDivisionError) as error:
-    print(error)
+def checker(a):
+    if type(a) != str:
+        raise TypeError(f"Sorry, we can't work with {type(a),}, we need class str")
+    else:
+        return a
 
-print('Next code')
+var = 10
+checker(var)
+
+# --------------------------------------------------------------------------------
