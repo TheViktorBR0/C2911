@@ -1,4 +1,4 @@
-def calculate(expression):
+def problems(expression):
     try:
         result = eval(expression)
         return result
@@ -13,13 +13,13 @@ def calculate(expression):
 
 while True:
     expression = input("Enter a calculation: ")
-    result = calculate(expression)
+    result = problems(expression)
     print("Result:", result)
 
     another_calculation = input("Do you want to perform another calculation? (Yes/No): ")
     if another_calculation.lower() == "no":
         break
     elif another_calculation.lower() == "yes":
-        calculate()
+        problems()
     else:
         break
