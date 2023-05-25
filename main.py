@@ -100,6 +100,6 @@ def checker(*exc_types):
 def calculate(expression):
     return eval(expression)
 
-calculate(input())
+calculate(input('Enter calculation: '))
 
 # ----------------------------------------------------------------------------------
