@@ -8,6 +8,10 @@ def divider(a, b):
         raise IndexError
     return a / b
 
+try:
+    SyntaxError as error:
+    return f"Syntax, Error {error}"
+
 
 data = {10: 2, 2: 5, "123": 4, 18: 0, []: 15, 8: 4}
 for key in data:
