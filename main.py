@@ -9,6 +9,12 @@ def divider(a, b):
 
 data = {10: 2, 2: 5, "123": 4, 18: 0, []: 15, 8 : 4}
 
+for key in data:
+    res = divider(key, data[key])
+    result.append(res)
+
+print(result)
+
 def problems(data):
     try:
         result = eval(data)
@@ -21,9 +27,3 @@ def problems(data):
         return f"Type Error, {error}"
     except ZeroDivisionError as error:
         return f"Error, {error}"
-
-for key in data:
-    res = divider(key, data[key])
-    result.append(res)
-
-print(result)
