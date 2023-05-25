@@ -3,13 +3,13 @@ def calculate(expression):
         result = eval(expression)
         return result
     except SyntaxError as error:
-        return f"Syntax Error: {error}"
+        return f"Syntax, Error {error}"
     except NameError as error:
-        return f"Name Error: {error}"
+        return f"Name Error, {error}"
     except TypeError as error:
-        return f"Type Error: {error}"
-    except Exception as error:
-        return f"Error: {error}"
+        return f"Type Error, {error}"
+    except ZeroDivisionError as error:
+        return f"Error, {error}"
 
 while True:
     expression = input("Enter a calculation: ")
@@ -23,22 +23,3 @@ while True:
         calculate()
     else:
         break
-
-
-# def calculate(expression):
-#     try:
-#         result = eval(expression)
-#         return result
-#     except SyntaxError as e:
-#         return f"Syntax Error: {str(e)}"
-#     except NameError as e:
-#         return f"Name Error: {str(e)}"
-#     except TypeError as e:
-#         return f"Type Error: {str(e)}"
-#     except Exception as e:
-#         return f"Error: {str(e)}"
-#
-# # Example usage
-# expression = input("Enter a mathematical expression: ")
-# result = calculate(expression)
-# print("Result:", result)
