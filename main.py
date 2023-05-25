@@ -9,6 +9,13 @@ def divider(a, b):
 
 data = {10: 2, 2: 5, "123": 4, 18: 0, []: 15, 8 : 4}
 
+def calculate(data):
+    try:
+        result = eval(data)
+        return result
+    except SyntaxError as error:
+        return f"Syntax, Error {error}"
+
 for key in data:
     res = divider(key, data[key])
     result.append(res)
