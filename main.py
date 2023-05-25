@@ -9,7 +9,7 @@ def divider(a, b):
     return a / b
 
     try:
-    SyntaxError as error:
+        SyntaxError as error:
         return f"Syntax, Error {error}"
     except:
 
