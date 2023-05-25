@@ -9,12 +9,18 @@ def divider(a, b):
 
 data = {10: 2, 2: 5, "123": 4, 18: 0, []: 15, 8 : 4}
 
-def calculate(data):
+def problems(data):
     try:
         result = eval(data)
         return result
     except SyntaxError as error:
         return f"Syntax, Error {error}"
+    except NameError as error:
+        return f"Name Error, {error}"
+    except TypeError as error:
+        return f"Type Error, {error}"
+    except ZeroDivisionError as error:
+        return f"Error, {error}"
 
 for key in data:
     res = divider(key, data[key])
