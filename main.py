@@ -4,6 +4,8 @@ result = []
 def divider(a, b):
     if a < b:
         raise ValueError
+    if a != int:
+        raise TypeError
     if b > 100:
         raise IndexError
     return a / b
