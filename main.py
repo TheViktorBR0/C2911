@@ -5,7 +5,7 @@ def divider(a, b):
     if a < b:
         raise ValueError
 
-    elif a != int:
+    elif a or b != int:
         raise TypeError
 
     elif b == 0:
