@@ -32,7 +32,7 @@ bubble = Image.open('bubble.png')
 dog = dog.convert('RGBA')
 
 for (x, y, w, h) in dog_face:
-    bubble = bubble.resize((w, int(h / 1.3)))
+    bubble = bubble.resize((w, int(h / 1.4)))
     dog.paste(bubble, (x, int(y + h / 1.5)), bubble)
     dog.save('dog_with_bubble.png')
     dog_with_glasses = cv2.imread('dog_with_bubble.png')
