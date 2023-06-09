@@ -1,11 +1,18 @@
-responce = requests.get('https://coinmarketcap.com/')
+import requests
+
+responce = requests.get('https://finance.i.ua/')
 
 responce_text = responce.text
 
 responce_parse = responce_text.split('<span>')
 
+print('Print a price with hryvnias(₴): ')
+price = input()
+
 for parse_elem1 in responce_parse:
-    if parse_elem1.startswith('$'):
-        for parse_elem2 in parse_elem1.split("</span>"):
-            if parse_elem2.startswith('$') and parse_elem2[1].isdigit():
-                print(parse_elem2)
+    for parse_elem2 in parse_elem1.split("</span>"):
+        if parse_elem2[1].isdigit():
+            cours = float(price) / float(parse_elem2)
+            print(round(cours, 2), '$')
+
+
