@@ -1,6 +1,7 @@
 import random
 import cv2
 from PIL import Image
+import requests
 
 print("=============================================")
 print('   Welcome to the library of my projects!')
@@ -443,8 +444,6 @@ def ai():
 # ---------------------------------------------------------------------------------------------------------------
 
 def currency():
-    import requests
-
     responce = requests.get('https://finance.i.ua/')
 
     responce_text = responce.text
@@ -466,41 +465,40 @@ def currency():
 
 if choise == "Student's life".lower():
     student()
-    print('-------------------')
-    print('I love your choice!')
-    print('-------------------')
+    print('-----------------------------')
+    print('Thanks for using our library!')
+    print('-----------------------------')
 
 elif choise == "Cat's life".lower():
     cat()
-    print('---------------')
-    print('Coolest choice!')
-    print('---------------')
+    print('-----------------------------')
+    print('Thanks for using our library!')
+    print('-----------------------------')
 
 elif choise == "Bank account".lower():
     bank()
-    print('-------------')
-    print('Great choice!')
-    print('-------------')
+    print('-----------------------------')
+    print('Thanks for using our library!')
+    print('-----------------------------')
 
 elif choise == "Sims".lower():
     sims()
-    print('-------------')
-    print('Best choice!')
-    print('-------------')
+    print('-----------------------------')
+    print('Thanks for using our library!')
+    print('-----------------------------')
 
 elif choise == "Calculator".lower():
     calculator()
-    print('-------------')
-    print('Cool choice!')
-    print('-------------')
+    print('-----------------------------')
+    print('Thanks for using our library!')
+    print('-----------------------------')
 
 elif choise == "AI".lower():
     ai()
-    print('--------------')
-    print('Great choice!')
-    print('--------------')
+    print('-----------------------------')
+    print('Thanks for using our library!')
+    print('-----------------------------')
 
 else:
     print("That variant isn't possible!")
     quit()
-
