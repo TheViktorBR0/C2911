@@ -10,6 +10,7 @@ print('What project you want to see?')
 print("Variants: Student's life, Cat's life, Bank account, Sims, Calculator, AI or Currency converter: ")
 choise = input("").lower()
 
+
 # ---------------------------------------------------------------------------------------------------------------
 
 def student():
@@ -67,6 +68,7 @@ def student():
         if oleg.alive == False:
             break
         oleg.live(day)
+
 
 # ---------------------------------------------------------------------------------------------------------------
 
@@ -134,6 +136,7 @@ def cat():
             break
         cat.live(day)
 
+
 # ---------------------------------------------------------------------------------------------------------------
 
 def bank():
@@ -169,6 +172,7 @@ def bank():
     my_account.deposit(deposit_amount)
     my_account.withdraw(withdrawal_amount)
     print(f"Current balance: {my_account.get_balance()}")
+
 
 # ---------------------------------------------------------------------------------------------------------------
 
@@ -377,6 +381,7 @@ def sims():
         if nick.live(day) == False:
             break
 
+
 # ---------------------------------------------------------------------------------------------------------------
 
 def calculator():
@@ -399,6 +404,7 @@ def calculator():
         return eval(expression)
 
     calculate(input('Enter calculation: '))
+
 
 # ---------------------------------------------------------------------------------------------------------------
 
@@ -441,6 +447,7 @@ def ai():
         cv2.imshow('dog_with_bubble.png', dog_with_glasses)
         cv2.waitKey()
 
+
 # ---------------------------------------------------------------------------------------------------------------
 
 def currency():
@@ -460,6 +467,7 @@ def currency():
                 print("Rounded price in dollars($) is: ")
                 print(round(cours, 2), '$')
                 quit()
+
 
 # ---------------------------------------------------------------------------------------------------------------
 
