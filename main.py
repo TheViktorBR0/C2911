@@ -2,10 +2,12 @@ import random
 import cv2
 from PIL import Image
 
-print('Welcome to the library of all our projects!')
+print("=============================================")
+print('   Welcome to the library of my projects!')
+print("=============================================")
 print('What project you want to see?')
-print('Variants: Students life, Cats life, Bank account, Sims, Calculator, AI or Currency converter: ')
-choise = input('').lower()
+print("Variants: Student's life, Cat's life, Bank account, Sims, Calculator, AI or Currency converter: ")
+choise = input("").lower()
 
 # ---------------------------------------------------------------------------------------------------------------
 
@@ -440,13 +442,65 @@ def ai():
 
 # ---------------------------------------------------------------------------------------------------------------
 
-def currency:
-    
+def currency():
+    import requests
+
+    responce = requests.get('https://finance.i.ua/')
+
+    responce_text = responce.text
+
+    responce_parse = responce_text.split('<span>')
+
+    print('Print a price with hryvnias(₴): ')
+    price = input()
+
+    for parse_elem1 in responce_parse:
+        for parse_elem2 in parse_elem1.split("</span>"):
+            if parse_elem2[1].isdigit():
+                cours = float(price) / float(parse_elem2)
+                print("Rounded price in dollars($) is: ")
+                print(round(cours, 2), '$')
+                quit()
 
 # ---------------------------------------------------------------------------------------------------------------
 
-if choise == 'Students life'.lower():
+if choise == "Student's life".lower():
+    student()
+    print('-------------------')
+    print('I love your choice!')
+    print('-------------------')
 
-if choise == 'Cats life'.lower():
+elif choise == "Cat's life".lower():
+    cat()
+    print('---------------')
+    print('Coolest choice!')
+    print('---------------')
 
-if choise == 'Bank account'.lower():
+elif choise == "Bank account".lower():
+    bank()
+    print('-------------')
+    print('Great choice!')
+    print('-------------')
+
+elif choise == "Sims".lower():
+    sims()
+    print('-------------')
+    print('Best choice!')
+    print('-------------')
+
+elif choise == "Calculator".lower():
+    calculator()
+    print('-------------')
+    print('Cool choice!')
+    print('-------------')
+
+elif choise == "AI".lower():
+    ai()
+    print('--------------')
+    print('Great choice!')
+    print('--------------')
+
+else:
+    print("That variant isn't possible!")
+    quit()
+
