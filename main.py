@@ -5,10 +5,9 @@ print('What project you want to see?')
 print('Variants: Students life, Cats life, Bank account, Sims, Calculator, AI or Currency converter: ')
 choise = input('').lower()
 
-if choise == 'Students life'.lower():
-    import random
+# ---------------------------------------------------------------------------------------------------------------
 
-
+def Student():
     class Student:
         def __init__(self, name):
             self.name = name
@@ -57,7 +56,6 @@ if choise == 'Students life'.lower():
             self.end_of_day()
             self.is_alive()
 
-
     oleg = Student(name="Oleg's")
 
     for day in range(365):
@@ -65,7 +63,9 @@ if choise == 'Students life'.lower():
             break
         oleg.live(day)
 
-if choise == 'Cats life'.lower():
+# ---------------------------------------------------------------------------------------------------------------
+
+def Cat():
     class Cat:
         def __init__(self, name):
             self.name = name
@@ -122,7 +122,6 @@ if choise == 'Cats life'.lower():
             self.end_of_day()
             self.is_alive()
 
-
     cat = Cat(name="cat's")
 
     for day in range(365):
@@ -130,5 +129,50 @@ if choise == 'Cats life'.lower():
             break
         cat.live(day)
 
-if choise == 'Bank account'.lower():
+# ---------------------------------------------------------------------------------------------------------------
+
+def Bank():
+    class BankAccount:
+        def __init__(self, account_number, balance):
+            self.account_number = account_number
+            self.balance = balance
+
+        def deposit(self, amount):
+            self.balance += amount
+            print(f"Deposit of {amount} successful. Current balance is {self.balance}")
+
+        def withdraw(self, amount):
+            if amount > self.balance:
+                print("Withdrawal failed. Not enough funds.")
+            else:
+                self.balance -= amount
+                print(f"Withdrawal of {amount} successful. Current balance is {self.balance}")
+
+        def get_balance(self):
+            return self.balance
+
+    account_number = int(input("Enter account number: "))
+    balance = float(input("Enter starting balance: "))
+
+    my_account = BankAccount(account_number, balance)
+    print(f"Account number: {my_account.account_number}")
+    print(f"Current balance: {my_account.get_balance()}")
+
+    deposit_amount = float(input("Enter deposit amount: "))
+    withdrawal_amount = float(input("Enter withdrawal amount: "))
+
+    my_account.deposit(deposit_amount)
+    my_account.withdraw(withdrawal_amount)
+    print(f"Current balance: {my_account.get_balance()}")
+
+# ---------------------------------------------------------------------------------------------------------------
+
+def Sims():
     
+
+# ---------------------------------------------------------------------------------------------------------------
+if choise == 'Students life'.lower():
+
+if choise == 'Cats life'.lower():
+
+if choise == 'Bank account'.lower():
