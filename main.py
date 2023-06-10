@@ -2,12 +2,13 @@ import random
 import cv2
 from PIL import Image
 import requests
+import turtle
 
 print("=============================================")
 print('   Welcome to the library of my projects!')
 print("=============================================")
 print('What project you want to see?')
-print("Variants: Student's life, Cat's life, Bank account, Sims, Calculator, AI or Currency converter: ")
+print("Variants: Student's life, Cat's life, Bank account, Sims, Calculator, AI, Currency converter or Paint!: ")
 choise = input("").lower()
 
 
@@ -471,6 +472,54 @@ def currency():
 
 # ---------------------------------------------------------------------------------------------------------------
 
+def paint():
+    def set_red():
+        turtle.pencolor("red")
+
+    def set_green():
+        turtle.pencolor("green")
+
+    def set_blue():
+        turtle.pencolor("blue")
+
+    def clear_canvas():
+        turtle.clear()
+
+    def move_forward():
+        turtle.forward(50)
+
+    def move_backward():
+        turtle.backward(50)
+
+    def turn_left():
+        turtle.left(90)
+
+    def turn_right():
+        turtle.right(90)
+
+    turtle.setup(800, 600)
+    turtle.title("Paint with Turtle")
+    turtle.bgcolor("white")
+
+    turtle.pensize(5)
+    turtle.shape("turtle")
+
+    turtle.onkeypress(set_red, "r")
+    turtle.onkeypress(set_green, "g")
+    turtle.onkeypress(set_blue, "b")
+    turtle.onkeypress(clear_canvas, "c")
+    turtle.onkeypress(move_forward, "Up")
+    turtle.onkeypress(move_backward, "Down")
+    turtle.onkeypress(turn_left, "Left")
+    turtle.onkeypress(turn_right, "Right")
+
+    turtle.listen()
+
+    turtle.mainloop()
+
+
+# ---------------------------------------------------------------------------------------------------------------
+
 if choise == "Student's life".lower():
     student()
     print('-----------------------------')
@@ -503,6 +552,12 @@ elif choise == "Calculator".lower():
 
 elif choise == "AI".lower():
     ai()
+    print('-----------------------------')
+    print('Thanks for using our library!')
+    print('-----------------------------')
+
+elif choise == "Paint".lower():
+    paint()
     print('-----------------------------')
     print('Thanks for using our library!')
     print('-----------------------------')
