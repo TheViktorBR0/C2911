@@ -1,2 +1,3 @@
 print('Welcome to the library of all our projects!')
-input(str('What project you want to see? Type '))
+print('What project you want to see?')
+input('Variants: Students life, Cats life, ')
