@@ -14,3 +14,7 @@ print(f'{total_cost*3}$ - total cost of 3 full complected computers')
 celsius = int(input("Enter the temperature in celsius: "))
 fahrenheit = (1.8 * celsius) + 32.
 print("Temperature in fahrenheit :", fahrenheit)
+
+celsius = int(input("Enter temperature in celsius: "))
+kelvin = celsius + 273.15
+print("Tempeature in kelvin:",kelvin)
