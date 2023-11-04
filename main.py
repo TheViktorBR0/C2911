@@ -6,7 +6,7 @@ print(f'{length*2+width*2}cm - perimeter')
 #finding the total cost of 3 full complected computers
 cost_mouse = 12
 cost_keyboard = 15
-cost_computer = 50
+cost_computer = 51
 
 total_cost = cost_computer + cost_mouse + cost_keyboard
 print(f'{total_cost*3}$ - total cost of 3 full complected computers')
