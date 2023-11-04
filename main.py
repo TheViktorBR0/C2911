@@ -17,4 +17,4 @@ print("Temperature in fahrenheit :", fahrenheit)
 
 celsius = int(input("Enter temperature in celsius: "))
 kelvin = celsius + 273.15
-print("Tempeature in kelvin:",kelvin)
+print("Tempeature in kelvin:", kelvin)
