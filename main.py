@@ -80,6 +80,5 @@ def RandomPassword(l):
 
 if True:
     password = RandomPassword(l)
-    print("Random password:", password)
-
+    print("Random password:", password) #printing our password
 print("-------------------------------------------------------------------------")
