@@ -70,15 +70,18 @@ print("-------------------------------------------------------------------------
 
 import random
 
-l = 8 #l for length
+l = 8  # l for length
+
+
 def RandomPassword(l):
-    symbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789" #all elements we want to use in password
+    symbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789"  # all elements we want to use in password
     password = ""
     for i in range(l):
-        password += random.choice(symbols) #choosing random elements from "symbols"
+        password += random.choice(symbols)  # choosing random elements from "symbols"
     return password
+
 
 if True:
     password = RandomPassword(l)
-    print("Random password:", password) #printing our password
+    print("Random password:", password)  # printing our password
 print("-------------------------------------------------------------------------")
