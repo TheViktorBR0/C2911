@@ -71,8 +71,6 @@ print("-------------------------------------------------------------------------
 import random
 
 l = 8  # l for length
-
-
 def RandomPassword(l):
     symbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789"  # all elements we want to use in password
     password = ""
