@@ -50,7 +50,7 @@ print("-------------------------------------------------------------------------
 # finding kilometers to miles
 
 kilometers = int(input("Enter value in kilometers: "))
-miles = (1.61 * kilometers)
+miles = (kilometers / 1.6)
 print("Value in miles:", miles)
 
 print("-------------------------------------------------------------------------")
