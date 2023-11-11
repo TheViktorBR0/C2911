@@ -20,33 +20,66 @@
 # kelvin = celsius + 273.15
 # print("Tempeature in kelvin:", kelvin)
 
-#finding centimeters to inches
+print("-------------------------------------------------------------------------")
+
+# finding centimeters to inches
+
 centimeters = int(input("Enter value in inches: "))
 inches = (2.54 * centimeters)
 print("Value in centimeters:", inches)
 
-#finding kilograms to miligrams
+print("-------------------------------------------------------------------------")
+
+# finding kilograms to miligrams
+
 kilograms = int(input("Enter value in kilograms: "))
 miligrams = (1000000 * kilograms)
 print("Value in miligrams:", miligrams)
 
-#finding meters to kilometers
+print("-------------------------------------------------------------------------")
+
+# finding meters to kilometers
+
 meters = int(input("Enter value in meters: "))
-calculate_kilometers = (meters /1000)
-kilometers = round(calculate_kilometers,0) #round function to make rounded value
+calculate_kilometers = (meters / 1000)
+kilometers = round(calculate_kilometers, 0)  # round function to make rounded value
 print("Value in kilometers:", kilometers)
 
-#finding kilometers to miles
+print("-------------------------------------------------------------------------")
+
+# finding kilometers to miles
+
 kilometers = int(input("Enter value in kilometers: "))
 miles = (1.61 * kilometers)
 print("Value in miles:", miles)
 
-#working with list
+print("-------------------------------------------------------------------------")
+
+# working with list
+
 list = ['Someone1', 'Someone2', 'Someone3']
 print(list)
-list.append('Someone4') #adds Someone4
+list.append('Someone4')  # adds Someone4
 print(list)
 list.pop(1)
-print(list) #removes Someone2
+print(list)  # removes Someone2
 
+print("-------------------------------------------------------------------------")
 
+# generating a random password
+
+import random
+
+n = 8
+def RandomPassword(n):
+    symbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789"
+    password = ""
+    for i in range(n):
+        password += random.choice(symbols)
+    return password
+
+if True:
+    password = RandomPassword(n)
+    print("Random password:", password)
+
+print("-------------------------------------------------------------------------")
