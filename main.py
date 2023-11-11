@@ -78,8 +78,8 @@ def RandomPassword(l):
         password += random.choice(symbols)  # choosing random elements from "symbols"
     return password
 
-
 if True:
     password = RandomPassword(l)
     print("Random password:", password)  # printing our password
+    
 print("-------------------------------------------------------------------------")
