@@ -128,13 +128,36 @@
 import tkinter as tk
 from tkinter import font
 
+
 def perform_operation(operation):
-    result = float(num1.get()) + float(num2.get()) if operation == 'add' else float(num1.get()) - float(num2.get())
+    if operation == 'add':
+        result = float(num1.get()) + float(num2.get())
+    elif operation == 'subtract':
+        result = float(num1.get()) - float(num2.get())
+    elif operation == 'multiply':
+        result = float(num1.get()) * float(num2.get())
+    elif operation == 'divide':
+        num2_value = float(num2.get())
+        if num2_value != 0:
+            result = float(num1.get()) / num2_value
+        else:
+            result = "Error: Division by zero"
+    elif operation == 'power':
+        result = float(num1.get()) ** float(num2.get())
+    elif operation == 'clear':
+        num1.delete(0, tk.END)
+        num2.delete(0, tk.END)
+        result_label.config(text="Result:")
+        return
+    else:
+        result = "Error: Invalid operation"
+
     result_label.config(text=f"Result: {result}")
 
+
 root = tk.Tk()
-root.title("Colorful Calculator")
-root.geometry("400x300")
+root.title("Scientific Calculator")
+root.geometry("800x300")
 
 comic_sans_font = font.Font(family='Comic Sans MS', size=12)
 
@@ -166,15 +189,24 @@ button_style = {
     'bd': 0,
 }
 
+
 def create_button(parent, text, operation):
     button = tk.Button(parent, text=text, command=lambda: perform_operation(operation), **button_style)
     button.pack(side=tk.LEFT, padx=5)
     return button
 
+
 add_button = create_button(button_frame, "Add", 'add')
 subtract_button = create_button(button_frame, "Subtract", 'subtract')
+multiply_button = create_button(button_frame, "Multiply", 'multiply')
+divide_button = create_button(button_frame, "Divide", 'divide')
+power_button = create_button(button_frame, "Power", 'power')
 
-result_label = tk.Label(frame, font=comic_sans_font, bg=result_background, fg='white', padx=10, pady=5, bd=3, relief='ridge')
+clear_button = create_button(button_frame, "Clear", 'clear')
+clear_button.config(bg='red')
+
+result_label = tk.Label(frame, font=comic_sans_font, bg=result_background, fg='white', padx=10, pady=5, bd=3,
+                        relief='ridge')
 result_label.pack(pady=10)
 
 root.mainloop()
