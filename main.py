@@ -124,3 +124,28 @@ number2 = int(input("Insert second number: "))
 print(number1 + number2)
 
 print("-------------------------------------------------------------------------")
+
+import tkinter as tk
+
+
+def add_numbers():
+    result = float(num1.get()) + float(num2.get())
+    result_label.config(text="Result: " + str(result))
+
+
+root = tk.Tk()
+root.title("Simple Addition Calculator")
+
+num1 = tk.Entry(root)
+num1.pack()
+
+num2 = tk.Entry(root)
+num2.pack()
+
+add_button = tk.Button(root, text="Add", command=add_numbers)
+add_button.pack()
+
+result_label = tk.Label(root)
+result_label.pack()
+
+root.mainloop()
