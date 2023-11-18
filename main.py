@@ -150,22 +150,22 @@ root.geometry("400x300")
 frame = tk.Frame(root)
 frame.pack(expand=True)
 
-num1 = tk.Entry(frame, font=("Arial", 14))
+num1 = tk.Entry(frame, font=("Comic Sans MS", 14))
 num1.pack()
 
-num2 = tk.Entry(frame, font=("Arial", 14))
+num2 = tk.Entry(frame, font=("Comic Sans MS", 14))
 num2.pack()
 
 button_frame = tk.Frame(frame)
 button_frame.pack(pady=10)
 
-add_button = tk.Button(button_frame, text="Add", command=add_numbers, font=("Arial", 14), width=10, height=2)
+add_button = tk.Button(button_frame, text="Add", command=add_numbers, font=("Comic Sans MS", 14), width=10, height=2)
 add_button.pack(side=tk.LEFT, padx=5)
 
-subtract_button = tk.Button(button_frame, text="Subtract", command=subtract_numbers, font=("Arial", 14), width=10,height=2)
+subtract_button = tk.Button(button_frame, text="Subtract", command=subtract_numbers, font=("Comic Sans MS", 14), width=10,height=2)
 subtract_button.pack(side=tk.LEFT, padx=5)
 
-result_label = tk.Label(frame, font=("Arial", 14))
+result_label = tk.Label(frame, font=("Comic Sans MS", 14))
 result_label.pack()
 
 root.mainloop()
