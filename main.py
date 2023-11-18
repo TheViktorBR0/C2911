@@ -19,67 +19,108 @@
 # celsius = int(input("Enter the temperature in celsius: "))
 # kelvin = celsius + 273.15
 # print("Tempeature in kelvin:", kelvin)
+#
+# print("-------------------------------------------------------------------------")
+#
+# # finding centimeters to inches
+#
+# centimeters = int(input("Enter value in inches: "))
+# inches = (2.54 * centimeters)
+# print("Value in centimeters:", inches)
+#
+# print("-------------------------------------------------------------------------")
+#
+# # finding kilograms to miligrams
+#
+# kilograms = int(input("Enter value in kilograms: "))
+# miligrams = (1000000 * kilograms)
+# print("Value in miligrams:", miligrams)
+#
+# print("-------------------------------------------------------------------------")
+#
+# # finding meters to kilometers
+#
+# meters = int(input("Enter value in meters: "))
+# calculate_kilometers = (meters / 1000)
+# kilometers = round(calculate_kilometers, 0)  # round function to make rounded value
+# print("Value in kilometers:", kilometers)
+#
+# print("-------------------------------------------------------------------------")
+#
+# # finding kilometers to miles
+#
+# kilometers = int(input("Enter value in kilometers: "))
+# miles = (kilometers / 1.6)
+# print("Value in miles:", miles)
+#
+# print("-------------------------------------------------------------------------")
+#
+# # working with list
+#
+# list = ['Someone1', 'Someone2', 'Someone3']
+# print(list)
+# list.append('Someone4')  # adds Someone4
+# print(list)
+# list.pop(1)
+# print(list)  # removes Someone2
+#
+# print("-------------------------------------------------------------------------")
+#
+# # generating a random password
+#
+# import random
+#
+# l = 8  # l for length
+# def RandomPassword(l):
+#     symbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789"  # all elements we want to use in password
+#     password = ""
+#     for i in range(l):
+#         password += random.choice(symbols)  # choosing random elements from "symbols"
+#     return password
+#
+# if True:
+#     password = RandomPassword(l)
+#     print("Random password:", password)  # printing our password
+#
+# print("-------------------------------------------------------------------------")
 
 print("-------------------------------------------------------------------------")
 
-# finding centimeters to inches
-
-centimeters = int(input("Enter value in inches: "))
-inches = (2.54 * centimeters)
-print("Value in centimeters:", inches)
+name = input("Insert your name: ")
+print(f"Welcome {name}!")
 
 print("-------------------------------------------------------------------------")
 
-# finding kilograms to miligrams
+name = "Viktor "
+surname = "Zaborovets"
 
-kilograms = int(input("Enter value in kilograms: "))
-miligrams = (1000000 * kilograms)
-print("Value in miligrams:", miligrams)
-
-print("-------------------------------------------------------------------------")
-
-# finding meters to kilometers
-
-meters = int(input("Enter value in meters: "))
-calculate_kilometers = (meters / 1000)
-kilometers = round(calculate_kilometers, 0)  # round function to make rounded value
-print("Value in kilometers:", kilometers)
+print(name + surname)
 
 print("-------------------------------------------------------------------------")
 
-# finding kilometers to miles
+age = int(input("Insert your age: "))
 
-kilometers = int(input("Enter value in kilometers: "))
-miles = (kilometers / 1.6)
-print("Value in miles:", miles)
-
-print("-------------------------------------------------------------------------")
-
-# working with list
-
-list = ['Someone1', 'Someone2', 'Someone3']
-print(list)
-list.append('Someone4')  # adds Someone4
-print(list)
-list.pop(1)
-print(list)  # removes Someone2
+if age < 18:
+    print("You are still too young")
+else:
+    print("You can vote")
 
 print("-------------------------------------------------------------------------")
 
-# generating a random password
+for num in range(21):
+    if num % 2 == 0:
+        print(num)
 
-import random
+print("-------------------------------------------------------------------------")
 
-l = 8  # l for length
-def RandomPassword(l):
-    symbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789"  # all elements we want to use in password
-    password = ""
-    for i in range(l):
-        password += random.choice(symbols)  # choosing random elements from "symbols"
-    return password
+list = ['apple', 'pineapple', 'not apple', 'not pineapple']
+for list in list:
+    print(list)
 
-if True:
-    password = RandomPassword(l)
-    print("Random password:", password)  # printing our password
+print("-------------------------------------------------------------------------")
+
+number1 = int(input("Insert first number: "))
+number2 = int(input("Insert second number: "))
+print(number1 + number2)
 
 print("-------------------------------------------------------------------------")
