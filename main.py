@@ -126,6 +126,7 @@ print(number1 + number2)
 print("-------------------------------------------------------------------------")
 
 import tkinter as tk
+from tkinter import font
 
 
 def add_numbers():
@@ -133,19 +134,39 @@ def add_numbers():
     result_label.config(text="Result: " + str(result))
 
 
-root = tk.Tk()
-root.title("Simple Addition Calculator")
+def subtract_numbers():
+    result = float(num1.get()) - float(num2.get())
+    result_label.config(text="Result: " + str(result))
 
-num1 = tk.Entry(root)
+
+root = tk.Tk()
+root.title("Simple Calculator")
+
+default_font = font.nametofont("TkDefaultFont")
+default_font.configure(size=12)
+
+root.geometry("400x300")
+
+frame = tk.Frame(root)
+frame.pack(expand=True)
+
+num1 = tk.Entry(frame, font=("Arial", 14))
 num1.pack()
 
-num2 = tk.Entry(root)
+num2 = tk.Entry(frame, font=("Arial", 14))
 num2.pack()
 
-add_button = tk.Button(root, text="Add", command=add_numbers)
-add_button.pack()
+button_frame = tk.Frame(frame)
+button_frame.pack(pady=10)
 
-result_label = tk.Label(root)
+add_button = tk.Button(button_frame, text="Add", command=add_numbers, font=("Arial", 14), width=10, height=2)
+add_button.pack(side=tk.LEFT, padx=5)
+
+subtract_button = tk.Button(button_frame, text="Subtract", command=subtract_numbers, font=("Arial", 14), width=10,
+                            height=2)
+subtract_button.pack(side=tk.LEFT, padx=5)
+
+result_label = tk.Label(frame, font=("Arial", 14))
 result_label.pack()
 
 root.mainloop()
