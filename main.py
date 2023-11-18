@@ -128,44 +128,53 @@
 import tkinter as tk
 from tkinter import font
 
-
-def add_numbers():
-    result = float(num1.get()) + float(num2.get())
-    result_label.config(text="Result: " + str(result))
-
-
-def subtract_numbers():
-    result = float(num1.get()) - float(num2.get())
-    result_label.config(text="Result: " + str(result))
-
+def perform_operation(operation):
+    result = float(num1.get()) + float(num2.get()) if operation == 'add' else float(num1.get()) - float(num2.get())
+    result_label.config(text=f"Result: {result}")
 
 root = tk.Tk()
-root.title("Simple Calculator")
-
-default_font = font.nametofont("TkDefaultFont")
-default_font.configure(size=12)
-
+root.title("Colorful Calculator")
 root.geometry("400x300")
 
-frame = tk.Frame(root)
-frame.pack(expand=True)
+comic_sans_font = font.Font(family='Comic Sans MS', size=12)
 
-num1 = tk.Entry(frame, font=("Comic Sans MS", 14))
-num1.pack()
+background_color = '#F3EEEA'
+button_color = '#B0A695'
+button_hover_color = '#776B5D'
+text_color = 'white'
+result_background = '#776B5D'
 
-num2 = tk.Entry(frame, font=("Comic Sans MS", 14))
-num2.pack()
+frame = tk.Frame(root, bg=background_color)
+frame.pack(expand=True, fill='both', padx=10, pady=10)
 
-button_frame = tk.Frame(frame)
+num1 = tk.Entry(frame, font=comic_sans_font, bd=0, highlightthickness=2, highlightcolor=button_color)
+num1.pack(pady=10, padx=20, ipady=5, fill='x')
+
+num2 = tk.Entry(frame, font=comic_sans_font, bd=0, highlightthickness=2, highlightcolor=button_color)
+num2.pack(pady=10, padx=20, ipady=5, fill='x')
+
+button_frame = tk.Frame(frame, bg=background_color)
 button_frame.pack(pady=10)
 
-add_button = tk.Button(button_frame, text="Add", command=add_numbers, font=("Comic Sans MS", 14), width=10, height=2)
-add_button.pack(side=tk.LEFT, padx=5)
+button_style = {
+    'font': comic_sans_font,
+    'width': 10,
+    'height': 2,
+    'bg': button_color,
+    'fg': text_color,
+    'activebackground': button_hover_color,
+    'bd': 0,
+}
 
-subtract_button = tk.Button(button_frame, text="Subtract", command=subtract_numbers, font=("Comic Sans MS", 14), width=10, height=2)
-subtract_button.pack(side=tk.LEFT, padx=5)
+def create_button(parent, text, operation):
+    button = tk.Button(parent, text=text, command=lambda: perform_operation(operation), **button_style)
+    button.pack(side=tk.LEFT, padx=5)
+    return button
 
-result_label = tk.Label(frame, font=("Comic Sans MS", 14))
-result_label.pack()
+add_button = create_button(button_frame, "Add", 'add')
+subtract_button = create_button(button_frame, "Subtract", 'subtract')
+
+result_label = tk.Label(frame, font=comic_sans_font, bg=result_background, fg='white', padx=10, pady=5, bd=3, relief='ridge')
+result_label.pack(pady=10)
 
 root.mainloop()
