@@ -83,47 +83,47 @@
 #     print("Random password:", password)  # printing our password
 #
 # print("-------------------------------------------------------------------------")
-
-print("-------------------------------------------------------------------------")
-
-name = input("Insert your name: ")
-print(f"Welcome {name}!")
-
-print("-------------------------------------------------------------------------")
-
-name = "Viktor "
-surname = "Zaborovets"
-
-print(name + surname)
-
-print("-------------------------------------------------------------------------")
-
-age = int(input("Insert your age: "))
-
-if age < 18:
-    print("You are still too young")
-else:
-    print("You can vote")
-
-print("-------------------------------------------------------------------------")
-
-for num in range(21):
-    if num % 2 == 0:
-        print(num)
-
-print("-------------------------------------------------------------------------")
-
-list = ['apple', 'pineapple', 'not apple', 'not pineapple']
-for list in list:
-    print(list)
-
-print("-------------------------------------------------------------------------")
-
-number1 = int(input("Insert first number: "))
-number2 = int(input("Insert second number: "))
-print(number1 + number2)
-
-print("-------------------------------------------------------------------------")
+#
+# print("-------------------------------------------------------------------------")
+#
+# name = input("Insert your name: ")
+# print(f"Welcome {name}!")
+#
+# print("-------------------------------------------------------------------------")
+#
+# name = "Viktor "
+# surname = "Zaborovets"
+#
+# print(name + surname)
+#
+# print("-------------------------------------------------------------------------")
+#
+# age = int(input("Insert your age: "))
+#
+# if age < 18:
+#     print("You are still too young")
+# else:
+#     print("You can vote")
+#
+# print("-------------------------------------------------------------------------")
+#
+# for num in range(21):
+#     if num % 2 == 0:
+#         print(num)
+#
+# print("-------------------------------------------------------------------------")
+#
+# list = ['apple', 'pineapple', 'not apple', 'not pineapple']
+# for list in list:
+#     print(list)
+#
+# print("-------------------------------------------------------------------------")
+#
+# number1 = int(input("Insert first number: "))
+# number2 = int(input("Insert second number: "))
+# print(number1 + number2)
+#
+# print("-------------------------------------------------------------------------")
 
 import tkinter as tk
 from tkinter import font
@@ -162,8 +162,7 @@ button_frame.pack(pady=10)
 add_button = tk.Button(button_frame, text="Add", command=add_numbers, font=("Arial", 14), width=10, height=2)
 add_button.pack(side=tk.LEFT, padx=5)
 
-subtract_button = tk.Button(button_frame, text="Subtract", command=subtract_numbers, font=("Arial", 14), width=10,
-                            height=2)
+subtract_button = tk.Button(button_frame, text="Subtract", command=subtract_numbers, font=("Arial", 14), width=10,height=2)
 subtract_button.pack(side=tk.LEFT, padx=5)
 
 result_label = tk.Label(frame, font=("Arial", 14))
