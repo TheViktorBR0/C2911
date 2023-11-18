@@ -162,7 +162,7 @@ button_frame.pack(pady=10)
 add_button = tk.Button(button_frame, text="Add", command=add_numbers, font=("Comic Sans MS", 14), width=10, height=2)
 add_button.pack(side=tk.LEFT, padx=5)
 
-subtract_button = tk.Button(button_frame, text="Subtract", command=subtract_numbers, font=("Comic Sans MS", 14), width=10,height=2)
+subtract_button = tk.Button(button_frame, text="Subtract", command=subtract_numbers, font=("Comic Sans MS", 14), width=10, height=2)
 subtract_button.pack(side=tk.LEFT, padx=5)
 
 result_label = tk.Label(frame, font=("Comic Sans MS", 14))
