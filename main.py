@@ -156,7 +156,7 @@ def perform_operation(operation):
 
 
 root = tk.Tk()
-root.title("Scientific Calculator")
+root.title("Calculator")
 root.geometry("800x300")
 
 comic_sans_font = font.Font(family='Comic Sans MS', size=12)
