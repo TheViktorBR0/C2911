@@ -205,8 +205,7 @@ power_button = create_button(button_frame, "Power", 'power')
 clear_button = create_button(button_frame, "Clear", 'clear')
 clear_button.config(bg='red')
 
-result_label = tk.Label(frame, font=comic_sans_font, bg=result_background, fg='white', padx=10, pady=5, bd=3,
-                        relief='ridge')
+result_label = tk.Label(frame, font=comic_sans_font, bg=result_background, fg='white', padx=10, pady=5, bd=3, relief='ridge')
 result_label.pack(pady=10)
 
 root.mainloop()
