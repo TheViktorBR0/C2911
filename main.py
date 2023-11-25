@@ -125,91 +125,91 @@
 #
 # print("-------------------------------------------------------------------------")
 #
-# import tkinter as tk
-# from tkinter import font
-#
-#
-# def perform_operation(operation):
-#     if operation == 'add':
-#         result = float(num1.get()) + float(num2.get())
-#     elif operation == 'subtract':
-#         result = float(num1.get()) - float(num2.get())
-#     elif operation == 'multiply':
-#         result = float(num1.get()) * float(num2.get())
-#     elif operation == 'divide':
-#         num2_value = float(num2.get())
-#         if num2_value != 0:
-#             result = float(num1.get()) / num2_value
-#         else:
-#             result = "Error: Division by zero"
-#     elif operation == 'power':
-#         result = float(num1.get()) ** float(num2.get())
-#     elif operation == 'clear':
-#         num1.delete(0, tk.END)
-#         num2.delete(0, tk.END)
-#         result_label.config(text="Result:")
-#         return
-#     else:
-#         result = "Error: Invalid operation"
-#
-#     result_label.config(text=f"Result: {result}")
-#
-#
-# root = tk.Tk()
-# root.title("Calculator")
-# root.geometry("800x300")
-#
-# comic_sans_font = font.Font(family='Comic Sans MS', size=12)
-#
-# background_color = '#F3EEEA'
-# button_color = '#B0A695'
-# button_hover_color = '#776B5D'
-# text_color = 'white'
-# result_background = '#776B5D'
-#
-# frame = tk.Frame(root, bg=background_color)
-# frame.pack(expand=True, fill='both', padx=10, pady=10)
-#
-# num1 = tk.Entry(frame, font=comic_sans_font, bd=0, highlightthickness=2, highlightcolor=button_color)
-# num1.pack(pady=10, padx=20, ipady=5, fill='x')
-#
-# num2 = tk.Entry(frame, font=comic_sans_font, bd=0, highlightthickness=2, highlightcolor=button_color)
-# num2.pack(pady=10, padx=20, ipady=5, fill='x')
-#
-# button_frame = tk.Frame(frame, bg=background_color)
-# button_frame.pack(pady=10)
-#
-# button_style = {
-#     'font': comic_sans_font,
-#     'width': 10,
-#     'height': 2,
-#     'bg': button_color,
-#     'fg': text_color,
-#     'activebackground': button_hover_color,
-#     'bd': 0,
-# }
-#
-#
-# def create_button(parent, text, operation):
-#     button = tk.Button(parent, text=text, command=lambda: perform_operation(operation), **button_style)
-#     button.pack(side=tk.LEFT, padx=5)
-#     return button
-#
-#
-# add_button = create_button(button_frame, "Add", 'add')
-# subtract_button = create_button(button_frame, "Subtract", 'subtract')
-# multiply_button = create_button(button_frame, "Multiply", 'multiply')
-# divide_button = create_button(button_frame, "Divide", 'divide')
-# power_button = create_button(button_frame, "Power", 'power')
-#
-# clear_button = create_button(button_frame, "Clear", 'clear')
-# clear_button.config(bg='red')
-#
-# result_label = tk.Label(frame, font=comic_sans_font, bg=result_background, fg='white', padx=10, pady=5, bd=3, relief='ridge')
-# result_label.pack(pady=10)
-#
-# root.mainloop()
+import tkinter as tk
+from tkinter import font
 
+
+def perform_operation(operation):
+    if operation == 'add':
+        result = float(num1.get()) + float(num2.get())
+    elif operation == 'subtract':
+        result = float(num1.get()) - float(num2.get())
+    elif operation == 'multiply':
+        result = float(num1.get()) * float(num2.get())
+    elif operation == 'divide':
+        num2_value = float(num2.get())
+        if num2_value != 0:
+            result = float(num1.get()) / num2_value
+        else:
+            result = "Error: Division by zero"
+    elif operation == 'power':
+        result = float(num1.get()) ** float(num2.get())
+    elif operation == 'clear':
+        num1.delete(0, tk.END)
+        num2.delete(0, tk.END)
+        result_label.config(text="Result:")
+        return
+    else:
+        result = "Error: Invalid operation"
+
+    result_label.config(text=f"Result: {result}")
+
+
+root = tk.Tk()
+root.title("Calculator")
+root.geometry("800x300")
+
+comic_sans_font = font.Font(family='Comic Sans MS', size=12)
+
+background_color = '#F3EEEA'
+button_color = '#B0A695'
+button_hover_color = '#776B5D'
+text_color = 'white'
+result_background = '#776B5D'
+
+frame = tk.Frame(root, bg=background_color)
+frame.pack(expand=True, fill='both', padx=10, pady=10)
+
+num1 = tk.Entry(frame, font=comic_sans_font, bd=0, highlightthickness=2, highlightcolor=button_color)
+num1.pack(pady=10, padx=20, ipady=5, fill='x')
+
+num2 = tk.Entry(frame, font=comic_sans_font, bd=0, highlightthickness=2, highlightcolor=button_color)
+num2.pack(pady=10, padx=20, ipady=5, fill='x')
+
+button_frame = tk.Frame(frame, bg=background_color)
+button_frame.pack(pady=10)
+
+button_style = {
+    'font': comic_sans_font,
+    'width': 10,
+    'height': 2,
+    'bg': button_color,
+    'fg': text_color,
+    'activebackground': button_hover_color,
+    'bd': 0,
+}
+
+
+def create_button(parent, text, operation):
+    button = tk.Button(parent, text=text, command=lambda: perform_operation(operation), **button_style)
+    button.pack(side=tk.LEFT, padx=5)
+    return button
+
+
+add_button = create_button(button_frame, "Add", 'add')
+subtract_button = create_button(button_frame, "Subtract", 'subtract')
+multiply_button = create_button(button_frame, "Multiply", 'multiply')
+divide_button = create_button(button_frame, "Divide", 'divide')
+power_button = create_button(button_frame, "Power", 'power')
+
+clear_button = create_button(button_frame, "Clear", 'clear')
+clear_button.config(bg='red')
+
+result_label = tk.Label(frame, font=comic_sans_font, bg=result_background, fg='white', padx=10, pady=5, bd=3, relief='ridge')
+result_label.pack(pady=10)
+
+root.mainloop()
+#
 # import tkinter as tk
 # import math
 #
