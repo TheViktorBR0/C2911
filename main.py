@@ -210,89 +210,89 @@
 #
 # root.mainloop()
 
-import tkinter as tk
-import math
-
-def calculate():
-    try:
-        expression = entry.get()
-        # Replace 'x' with '*' for multiplication
-        expression = expression.replace('x', '*')
-        result = eval(expression)
-        entry.delete(0, tk.END)
-        entry.insert(tk.END, str(result))
-    except Exception as e:
-        entry.delete(0, tk.END)
-        entry.insert(tk.END, "Error")
-
-def clear():
-    entry.delete(0, tk.END)
-
-def press(key):
-    entry.insert(tk.END, key)
-
-def backspace():
-    entry.delete(len(entry.get()) - 1)
-
-def square_root():
-    try:
-        value = float(entry.get())
-        result = math.sqrt(value)
-        entry.delete(0, tk.END)
-        entry.insert(tk.END, str(result))
-    except ValueError:
-        entry.delete(0, tk.END)
-        entry.insert(tk.END, "Error")
-
-def power():
-    try:
-        value = float(entry.get())
-        result = value ** 2
-        entry.delete(0, tk.END)
-        entry.insert(tk.END, str(result))
-    except ValueError:
-        entry.delete(0, tk.END)
-        entry.insert(tk.END, "Error")
-
-root = tk.Tk()
-root.title("Enhanced Calculator")
-
-# Background color
-root.configure(bg='#F3EEEA')
-
-entry = tk.Entry(root, width=40, font=('Arial', 18))
-entry.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
-
-# Button colors and font color
-button_color = '#d1c4ba'
-font_color = '#F3EEEA'
-
-buttons = [
-    '7', '8', '9', '/',
-    '4', '5', '6', '*',
-    '1', '2', '3', '-',
-    'C', '0', '=', '+',
-    '√', 'x²', '⌫', '.'
-]
-
-row = 1
-col = 0
-for button in buttons:
-    if button == '=':
-        tk.Button(root, text=button, width=12, height=2, bg=button_color, fg=font_color, font=('Arial', 14, 'bold'), command=calculate).grid(row=row, column=col, padx=5, pady=5)
-    elif button == 'C':
-        tk.Button(root, text=button, width=12, height=2, bg=button_color, fg=font_color, font=('Arial', 14, 'bold'), command=clear).grid(row=row, column=col, padx=5, pady=5)
-    elif button == '√':
-        tk.Button(root, text=button, width=12, height=2, bg=button_color, fg=font_color, font=('Arial', 14, 'bold'), command=square_root).grid(row=row, column=col, padx=5, pady=5)
-    elif button == 'x²':
-        tk.Button(root, text=button, width=12, height=2, bg=button_color, fg=font_color, font=('Arial', 14, 'bold'), command=power).grid(row=row, column=col, padx=5, pady=5)
-    elif button == '⌫':
-        tk.Button(root, text=button, width=12, height=2, bg=button_color, fg=font_color, font=('Arial', 14, 'bold'), command=backspace).grid(row=row, column=col, padx=5, pady=5)
-    else:
-        tk.Button(root, text=button, width=12, height=2, bg=button_color, fg=font_color, font=('Arial', 14, 'bold'), command=lambda key=button: press(key)).grid(row=row, column=col, padx=5, pady=5)
-    col += 1
-    if col > 3:
-        col = 0
-        row += 1
-
-root.mainloop()
+# import tkinter as tk
+# import math
+#
+# def calculate():
+#     try:
+#         expression = entry.get()
+#         # Replace 'x' with '*' for multiplication
+#         expression = expression.replace('x', '*')
+#         result = eval(expression)
+#         entry.delete(0, tk.END)
+#         entry.insert(tk.END, str(result))
+#     except Exception as e:
+#         entry.delete(0, tk.END)
+#         entry.insert(tk.END, "Error")
+#
+# def clear():
+#     entry.delete(0, tk.END)
+#
+# def press(key):
+#     entry.insert(tk.END, key)
+#
+# def backspace():
+#     entry.delete(len(entry.get()) - 1)
+#
+# def square_root():
+#     try:
+#         value = float(entry.get())
+#         result = math.sqrt(value)
+#         entry.delete(0, tk.END)
+#         entry.insert(tk.END, str(result))
+#     except ValueError:
+#         entry.delete(0, tk.END)
+#         entry.insert(tk.END, "Error")
+#
+# def power():
+#     try:
+#         value = float(entry.get())
+#         result = value ** 2
+#         entry.delete(0, tk.END)
+#         entry.insert(tk.END, str(result))
+#     except ValueError:
+#         entry.delete(0, tk.END)
+#         entry.insert(tk.END, "Error")
+#
+# root = tk.Tk()
+# root.title("Enhanced Calculator")
+#
+# # Background color
+# root.configure(bg='#F3EEEA')
+#
+# entry = tk.Entry(root, width=40, font=('Arial', 18))
+# entry.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
+#
+# # Button colors and font color
+# button_color = '#d1c4ba'
+# font_color = '#F3EEEA'
+#
+# buttons = [
+#     '7', '8', '9', '/',
+#     '4', '5', '6', '*',
+#     '1', '2', '3', '-',
+#     'C', '0', '=', '+',
+#     '√', 'x²', '⌫', '.'
+# ]
+#
+# row = 1
+# col = 0
+# for button in buttons:
+#     if button == '=':
+#         tk.Button(root, text=button, width=12, height=2, bg=button_color, fg=font_color, font=('Arial', 14, 'bold'), command=calculate).grid(row=row, column=col, padx=5, pady=5)
+#     elif button == 'C':
+#         tk.Button(root, text=button, width=12, height=2, bg=button_color, fg=font_color, font=('Arial', 14, 'bold'), command=clear).grid(row=row, column=col, padx=5, pady=5)
+#     elif button == '√':
+#         tk.Button(root, text=button, width=12, height=2, bg=button_color, fg=font_color, font=('Arial', 14, 'bold'), command=square_root).grid(row=row, column=col, padx=5, pady=5)
+#     elif button == 'x²':
+#         tk.Button(root, text=button, width=12, height=2, bg=button_color, fg=font_color, font=('Arial', 14, 'bold'), command=power).grid(row=row, column=col, padx=5, pady=5)
+#     elif button == '⌫':
+#         tk.Button(root, text=button, width=12, height=2, bg=button_color, fg=font_color, font=('Arial', 14, 'bold'), command=backspace).grid(row=row, column=col, padx=5, pady=5)
+#     else:
+#         tk.Button(root, text=button, width=12, height=2, bg=button_color, fg=font_color, font=('Arial', 14, 'bold'), command=lambda key=button: press(key)).grid(row=row, column=col, padx=5, pady=5)
+#     col += 1
+#     if col > 3:
+#         col = 0
+#         row += 1
+#
+# root.mainloop()
