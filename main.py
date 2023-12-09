@@ -20,4 +20,22 @@ while True:
 
     gray = cv2.cvtColor(img, cv2.COLOR_BGT2GRAY)
     faces = face_cascade.detectMultiScale(gray, 1.3)
-    
+
+for (x, y, w, h) in faces:
+    cv2.rectangle(img, (x, y), (x+ w, y + h), (0, 255, 0), 5)
+    roi_gray = gray[y:y + h, x:x + w]
+    roi_color = img[y:y + h, x:x + w]
+
+    arr = {y:y + h, x:x + w}
+    print('-------------------')
+    print('-------------------')
+    print(arr)
+
+    print('X: %d     |    Y: %d' % (x,y))
+
+    xx = int(x+ (x + h)) / 2
+    yy = int(y + (y + w)) / 2
+    print('xx: %d     |     yy: %d' % (xx, yy))
+    center = (xx, yy)
+
+cv2.imshow('img', img)
