@@ -8,36 +8,28 @@ face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 cap = cv2.VideoCapture(0)
 
-cap_width = 1280
-cap_height = 720
+cap_width = 800  # Set the desired width for the window
+cap_height = 600  # Set the desired height for the window
+
+cv2.namedWindow('img')  # Create a window
 
 while True:
     ret, img = cap.read()
     if ret:
-        cv2.resizeWindow('img', cap_width, cap_height)
-        cv2.line(img, (cap_width, cap_height//2, (0, cap_height//2), (0, 255, 0), 1))
-        cv2.line(img, (cap_width//2, 0), (cap_width//2, cap_height), (0.255, 0), 1)
-        cv2.circle(img, (cap_width//2, cap_height//2), 5, (255, 255, 255), -1)
+        img = cv2.resize(img, (cap_width, cap_height))  # Resize the captured frame
 
-        gray = cv2.cvtColor(img, cv2.COLOR_BGT2GRAY)
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         faces = face_cascade.detectMultiScale(gray, 1.3)
 
         for (x, y, w, h) in faces:
-            cv2.rectangle(img, (x, y), (x+ w, y + h), (0, 255, 0), 5)
-            roi_gray = gray[y:y + h, x:x + w]
-            roi_color = img[y:y + h, x:x + w]
+            cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 5)
+            center_x = x + w // 2  # Calculate the center of the face
+            center_y = y + h // 2
 
-            arr = {y:y + h, x:x + w}
-            print('-------------------')
-            print('-------------------')
-            print(arr)
+            cv2.line(img, (center_x - 5, center_y), (center_x + 5, center_y), (0, 0, 255), 2)  # Horizontal line marker
+            cv2.line(img, (center_x, center_y - 5), (center_x, center_y + 5), (0, 0, 255), 2)  # Vertical line marker
 
-            print('X: %d     |    Y: %d' % (x,y))
-
-            xx = int(x+ (x + h)) / 2
-            yy = int(y + (y + w)) / 2
-            print('xx: %d     |     yy: %d' % (xx, yy))
-            center = (xx, yy)
+            print("Center coordinates of the face: ({}, {})".format(center_x, center_y))  # Print coordinates in console
 
         cv2.imshow('img', img)
 
@@ -46,5 +38,5 @@ while True:
             print('Stop streaming')
             break
 
-cap.realese()
+cap.release()
 cv2.destroyAllWindows()
