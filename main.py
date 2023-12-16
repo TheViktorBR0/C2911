@@ -17,6 +17,7 @@ class MemoryGame:
         ]
         self.matched_icons = []
         self.moves = 0
+        self.opened_buttons = []  # To store currently opened buttons
         self.create_game_board()
         self.start_game()
 
@@ -28,8 +29,8 @@ class MemoryGame:
             for col_num in range(self.columns):
                 new_button = tk.Button(
                     self.root,
-                    width=8,
-                    height=4,
+                    width=7,  # Square buttons
+                    height=3,  # Square buttons
                     font=comic_sans,
                     relief="raised",
                     borderwidth=3,
@@ -41,7 +42,9 @@ class MemoryGame:
             self.buttons.append(current_row)
 
         self.root.config(bg="#FDF7E4")
-        self.root.geometry("660x820")  # Set window size here
+        total_width = self.columns * 100  # Adjust width based on button size
+        total_height = self.rows * 110  # Adjust height based on button size
+        self.root.geometry(f"{total_width}x{total_height}")  # Set window size here
 
     def start_game(self):
         icons = self.icons * 2
@@ -57,22 +60,22 @@ class MemoryGame:
     def button_click(self, row, col):
         current_button = self.buttons[row][col]
 
-        if current_button.cget('text') == "":
+        if current_button.cget('text') == "" and len(self.opened_buttons) < 2:
             current_button.config(text=current_button.icon)
-            self.matched_icons.append(current_button)
+            self.opened_buttons.append(current_button)
 
-        if len(self.matched_icons) == 2:
-            self.root.after(1000, self.check_match)
+            if len(self.opened_buttons) == 2:
+                self.root.after(1000, self.check_match)
 
     def check_match(self):
-        if self.matched_icons[0].cget('text') == self.matched_icons[1].cget('text'):
-            for button in self.matched_icons:
+        if self.opened_buttons[0].cget('text') == self.opened_buttons[1].cget('text'):
+            for button in self.opened_buttons:
                 button.config(state=tk.DISABLED)
         else:
-            for button in self.matched_icons:
+            for button in self.opened_buttons:
                 button.config(text="")
 
-        self.matched_icons = []
+        self.opened_buttons = []
         self.moves += 1
         if self.check_win():
             tk.messagebox.showinfo("Congratulations!", f"You won in {self.moves} moves!")
@@ -87,7 +90,7 @@ class MemoryGame:
 
     def restart_game(self):
         self.moves = 0
-        self.matched_icons = []
+        self.opened_buttons = []
         self.start_game()
 
 def main():
